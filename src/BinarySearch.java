@@ -43,9 +43,11 @@ public class BinarySearch{
                 printf("%n[INFO] Found target value %s at index: %s%n", target, midIndex);
                 break;
             }
+
             //if target is greater than the value of the current element, replace indexA with midIndex + 1
             else if(arr[midIndex]<target)
                 indexA = midIndex + 1;
+
             //if target is less than the value of the current element, replace indexB with midIndex - 1
             else
                 indexB = midIndex - 1;
