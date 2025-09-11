@@ -1,14 +1,21 @@
-# algorithm-practice
+<table>
+  <tr>
+    <td rowspan="2"><img src="saiba-midori-blush.gif"></img></td>
+    <td colspan="5"><h1> SEPT 2025 ALGORITHM PRACTICE </h1></td>
+  </tr>
+  <tr>
+    <td colspan="5">
+      <b>[DISCLAIMER]</b>
+      &nbspThis repository does not reflect best practices when it comes to coding. Read at your own risk
+    </td>
+  </tr>
+</table>
 
-## Disclaimer
-This repository does not reflect best practices when it comes to coding.
-Read at your own risk
-
-## 2025/09/11
+## 2025/09/11 Thursday
 - Binary Search Algorithm w/ passes count
 - Determine the highest value in an array
 - Determine the lowest value in an array
 - Determine the odd and even valued elements in an array
 - Determine the multiples of a target element in an array
 
-## 2025/09/12
+## 2025/09/12 Friday
