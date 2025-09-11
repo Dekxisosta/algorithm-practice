@@ -1,10 +1,13 @@
+/* =======================================================
+ *          BINARY SEARCH PROGRAM
+ * ====================================================== */
 /**
  * DISCLAIMER: This program does not reflect the best practices in coding
- *
+ *<p></p>
  * This mimics the Binary Search algorithm. In every pass, it prints out the
  * value of the indices, the middle index (sum of both indices / 2), and the array
  * element that uses the middle index
- *
+ *<p></p>
  * Only limited to sorted arrays with distinct elements
  */
 public class BinarySearch{
@@ -17,9 +20,9 @@ public class BinarySearch{
         return new int[]{1,2,3,4,5,6,7,8,9,10};
     }
     private void performSearch(int[] arr, int target){
-        int indexA = 0;
-        int indexB = arr.length-1;
-        int counter = 0;
+        int indexA = 0; // serves as the low value for the range (indexA, indexB)
+        int indexB = arr.length-1; // serves as the high value for the range (indexA, indexB)
+        int pass = 0; // determines the number of passes made by the program before termination
 
         // Banner of Binary Search Passes
         printf("%n%s", "=".repeat(82));
@@ -30,7 +33,7 @@ public class BinarySearch{
             //Serves as a pointer for accessing elements in the sorted array
             int midIndex = (indexA+indexB)/2;
 
-            printf("%n| PASS %-4s || indexA: %-4s : indexB: %-4s : midIndex: %-4s : arr[midIndex]: %-4s|", ++counter, indexA, indexB, midIndex, arr[midIndex]);
+            printf("%n| PASS %-4s || indexA: %-4s : indexB: %-4s : midIndex: %-4s : arr[midIndex]: %-4s|", ++pass, indexA, indexB, midIndex, arr[midIndex]);
 
             if(arr[midIndex]==target) {
                 //Serves as the last border for the Binary Search Passes table
@@ -51,6 +54,12 @@ public class BinarySearch{
         if(indexA>indexB)
             printf("%n[INFO] Unable to find target %s", target);
     }
+
+    /*
+     * =======================================================
+     *          UTILITIES
+     * ======================================================
+     */
     private void printf(String format, Object... args){
         System.out.printf(format, args);
     }
