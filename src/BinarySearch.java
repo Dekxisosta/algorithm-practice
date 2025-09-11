@@ -11,14 +11,27 @@
  * Only limited to sorted arrays with distinct elements
  */
 public class BinarySearch{
+    /** Entry-point of the program */
     public static void main(String[] args){
         BinarySearch obj = new BinarySearch();
         obj.performSearch(obj.getNumbers(), 5);
         obj.performSearch(obj.getNumbers(), 10);
     }
+    /**
+     * Instead of implementing a program flow where the program allows user to input numbers,
+     * the getNumbers() method will serve as the storage of the test case array for now.
+     * ( Why didn't I just make a privated global variable for it? Idk buddy, I've been coding
+     * for 8 hours straight )
+     */
     private int[] getNumbers(){
         return new int[]{1,2,3,4,5,6,7,8,9,10};
     }
+
+    /**
+     * Performs the actual binary search in the program O(log n)
+     * @param arr the array where the target value will be searched
+     * @param target the target value searched inside the array
+     */
     private void performSearch(int[] arr, int target){
         int indexA = 0; // serves as the low value for the range (indexA, indexB)
         int indexB = arr.length-1; // serves as the high value for the range (indexA, indexB)
@@ -62,6 +75,7 @@ public class BinarySearch{
      *          UTILITIES
      * ======================================================
      */
+    /** Shorthand printf method */
     private void printf(String format, Object... args){
         System.out.printf(format, args);
     }
