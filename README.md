@@ -1,4 +1,9 @@
 # algorithm-practice
+
+## Disclaimer
+This repository does not reflect best practices when it comes to coding.
+Read at your own risk
+
 ## 2025/09/11
 - Binary Search Algorithm w/ passes count
 - Determine the highest value in an array
