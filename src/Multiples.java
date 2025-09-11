@@ -1,14 +1,14 @@
 /* =======================================================
- *          DETERMINE ODD AND EVEN NUMBERS PROGRAM
+ *          DETERMINE MULTIPLES PROGRAM
  * ====================================================== */
 /**
  * DISCLAIMER: This program does not reflect the best practices in coding
  *<p></p>
  * This determines if numbers in an array are multiples of a target value
  */
-public class DetermineMultiples {
+public class Multiples {
     public static void main(String[] args) {
-        DetermineMultiples obj = new DetermineMultiples();
+        Multiples obj = new Multiples();
         obj.displayMultiples(obj.getNumbers(), 3);
     }
     /** A roundabout way of making an array for a test case */

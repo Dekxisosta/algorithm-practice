@@ -6,9 +6,9 @@
  *<p></p>
  * This determines the odd and even numbers of an array
  */
-public class DetermineOddEven {
+public class OddEven {
     public static void main(String[] args) {
-        DetermineOddEven obj = new DetermineOddEven();
+        OddEven obj = new OddEven();
         obj.displayOddAndEvenNums(obj.getNumbers());
     }
     /** A roundabout way of making an array for a test case */
@@ -21,9 +21,14 @@ public class DetermineOddEven {
      * @param arr the arr to be searched of the highest valued element
      */
     private void displayOddAndEvenNums(int[] arr) {
-        int[] oddArr = new int[arr.length]; // stores the values of odd numbers
-        int[] evenArr = new int[arr.length]; // stores the values of even numbers
-        int oddCounter = 0, evenCounter = 0; // stores the count of odd/even numbers
+        // Stores the values of odd numbers
+        int[] oddArr = new int[arr.length];
+
+        // Stores the values of even numbers
+        int[] evenArr = new int[arr.length];
+
+        // Stores the count of odd/even numbers
+        int oddCounter = 0, evenCounter = 0;
 
         for(int i = 0; i < arr.length; i++){
             if(arr[i] % 2 == 0)
