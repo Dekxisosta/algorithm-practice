@@ -1,5 +1,5 @@
 /* =======================================================
- *          BINARY SEARCH PROGRAM
+ *          DETERMINE ODD AND EVEN NUMBERS PROGRAM
  * ====================================================== */
 /**
  * DISCLAIMER: This program does not reflect the best practices in coding
