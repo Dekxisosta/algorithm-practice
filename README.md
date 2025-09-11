@@ -1,7 +1,7 @@
 <table>
   <tr>
     <td rowspan="2"><img src="saiba-midori-blush.gif"></img></td>
-    <td colspan="5"><h1> SEPT 2025 ALGORITHM PRACTICE </h1></td>
+    <td colspan="5"><h1> SEPT 2025 ALGORITHM PRACTICE - DEKXI </h1></td>
   </tr>
   <tr>
     <td colspan="5">
