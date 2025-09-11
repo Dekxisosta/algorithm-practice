@@ -9,12 +9,26 @@
 public class DetermineHighest {
     public static void main(String[] args) {
         DetermineHighest obj = new DetermineHighest();
-        obj.performSearch(obj.getNumbers(), 5);
-        obj.performSearch(obj.getNumbers(), 10);
+        obj.determineHighest(obj.getNumbers());
+    }
+    /**
+     * A roundabout way of making an array for a test case
+     */
+    private int[] getNumbers(){
+        return new int[]{240,589,865,2031,9210,120391,782,89,230};
     }
 
-    private int[] getNumbers() {
-        return new int[]{20, 392, 1283, 495, 2302, 103234, 203, 504};
+    /**
+     * Determines the highest value in an array of integers
+     * @param arr the arr to be searched of the highest valued element
+     */
+    private void determineHighest(int[] arr) {
+        int highest = arr[0];
+        for(int val: arr)
+            if (val > highest)
+                highest = val;
+
+        printf("%n[INFO] The highest value in the array is: %s", highest);
     }
 
 
