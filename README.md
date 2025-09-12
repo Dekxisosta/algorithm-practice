@@ -19,3 +19,4 @@
 - Determine multiples of a target element in an array w/counter
 
 ## 2025/09/12 Friday
+- Armstrong Number
