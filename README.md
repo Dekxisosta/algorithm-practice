@@ -20,3 +20,4 @@
 
 ## 2025/09/12 Friday
 - Armstrong Number
+- Integer palindrome checker
