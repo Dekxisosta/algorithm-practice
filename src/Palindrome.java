@@ -1,30 +1,31 @@
 /* =======================================================
- *          DETERMINE ARMSTRONG NUMBERS PROGRAM
+ *          DETERMINE PALINDROME NUMBERS PROGRAM
  * ====================================================== */
 /**
  * DISCLAIMER: This program does not reflect the best practices in coding
  *<p></p>
  * This determines the odd and even numbers of an array
  */
-public class ArmstrongNumber {
+public class Palindrome {
     /** Serves as the entry point of the program */
     public static void main(String[] args) {
         try{
-            new ArmstrongNumber().run();
+            new Palindrome().run();
         }catch(Exception e){
             e.printStackTrace();
         }
     }
+
     /**
      * Runs the actual program. In this case, since it's just algorithm practice,
      * no program loops are involved
      */
     private void run(){
         for(int num: getNumbers()){
-            if(isArmstrong(num))
-                printf("%n[INFO] Armstrong number found: %d", num );
+            if(isPalindrome(num))
+                printf("%n[INFO] Palindrome found: %d", num);
             else
-                printf("%n[INFO] Attempted value is not an armstrong: %d", num );
+                printf("%n[INFO] Attempted value is not a palindrome: %d", num);
         }
     }
 
@@ -33,37 +34,29 @@ public class ArmstrongNumber {
      * Could be modified to create arrays with random numbers
      */
     private int[] getNumbers(){
-        return new int[]{0, 153, 600, 370, 371,500};
+        return new int[]{0, 121,123454321,153, 600, 370, 371,500};
     }
 
     /**
-     * Determines armstrong numbers, if not armstrong, display accordingly.
-     * Does not use Java built-in libraries
-     * @param num the number to be checked if armstrong or not
+     * Determines if a number is a palindrome
+     * @param num the number to be checked
+     * @return if num is a palindrome, true. Otherwise, false
      */
-    private boolean isArmstrong(int num){
-        // A container of digits of a number with ordered indices (e.g. 123 = {1,2,3})
-        int[] digits = getDigitArray(num);
+    private boolean isPalindrome(int num){
+        //Gets digits of a number with ordered indices (e.g. 123 = {1,2,3})
+        int[] numArr = getDigitArray(num);
 
-        // The number of digits
-        int numDigits = digits.length;
+        // Serves as pointers for lowest and highest index
+        int low = 0;
+        int high = numArr.length-1;
 
-        // Gets the sum of the digits raised to the number of digits (numDigits)
-        int sum = 0;
-        for(int i=0; i<numDigits; i++){
-            int power = 1;
-            for(int j=0; j<numDigits; j++){
-                power *= digits[i];
-            }
-            sum += power;
-        }
+        // Checks if low and high are equal in value, if not returns false
+        // For every loop, low increments and high decrements
+        while(low<high)
+            if(numArr[low++]!=numArr[high--])
+                return false;
 
-        // If value is armstrong, return true
-        if(num == sum)
-            return true;
-
-        // If not armstrong, return false
-        return false;
+        return true;
     }
 
     /**
@@ -83,18 +76,18 @@ public class ArmstrongNumber {
             temp /= 10;
 
         // Creates a new container for the split integers of value
-        int[] digits = new int[numDigits];
+        int[] numArr = new int[numDigits];
 
         // Reallocate value to temporary storage
         temp = num;
 
         // Stores digits in the earlier container
         for(int i=numDigits-1;i>=0;i--){
-            digits[i] = temp%10;
+            numArr[i] = temp%10;
             temp /= 10;
         }
 
-        return digits;
+        return numArr;
     }
 
     /*======================================================

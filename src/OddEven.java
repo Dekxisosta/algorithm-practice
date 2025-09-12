@@ -7,9 +7,21 @@
  * This determines the odd and even numbers of an array
  */
 public class OddEven {
+    /** Serves as the entry point of the program */
     public static void main(String[] args) {
-        OddEven obj = new OddEven();
-        obj.displayOddAndEvenNums(obj.getNumbers());
+        try{
+            new OddEven().run();
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * Runs the actual program. In this case, since it's just algorithm practice,
+     * no program loops are involved
+     */
+    private void run(){
+        displayOddAndEvenNums(getNumbers());
     }
     /** A roundabout way of making an array for a test case */
     private int[] getNumbers(){

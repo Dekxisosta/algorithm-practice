@@ -11,20 +11,31 @@
  * Only limited to sorted arrays with distinct elements
  */
 public class BinarySearch{
-    /** Entry-point of the program */
-    public static void main(String[] args){
-        BinarySearch obj = new BinarySearch();
-        obj.performSearch(obj.getNumbers(), 5);
-        obj.performSearch(obj.getNumbers(), 10);
+    /** Serves as the entry point of the program */
+    public static void main(String[] args) {
+        try{
+            new BinarySearch().run();
+        }catch(Exception e){
+            e.printStackTrace();
+        }
     }
     /**
-     * Instead of implementing a program flow where the program allows user to input numbers,
-     * the getNumbers() method will serve as the storage of the test case array for now.
-     * ( Why didn't I just make a privated global variable for it? Idk buddy, I've been coding
-     * for 8 hours straight )
+     * Runs the actual program. In this case, since it's just algorithm practice,
+     * no program loops are involved
+     */
+    private void run(){
+        //Random numbers used to find target
+        for(int num: new int[]{153, 500, 0,2,31,5,61,}){
+            isInArray(getNumbers(), num);
+        }
+    }
+
+    /**
+     * A roundabout way of making an array for a test case.
+     * Could be modified to create arrays with random numbers
      */
     private int[] getNumbers(){
-        return new int[]{1,2,3,4,5,6,7,8,9,10};
+        return new int[]{0,5,31,32,61, 153, 370, 371,500};
     }
 
     /**
@@ -32,7 +43,7 @@ public class BinarySearch{
      * @param arr the array where the target value will be searched
      * @param target the target value searched inside the array
      */
-    private void performSearch(int[] arr, int target){
+    private void isInArray(int[] arr, int target){
         int indexA = 0; // serves as the low value for the range (indexA, indexB)
         int indexB = arr.length-1; // serves as the high value for the range (indexA, indexB)
         int pass = 0; // determines the number of passes made by the program before termination
@@ -68,6 +79,7 @@ public class BinarySearch{
         // If index positions overlapped each other, print an expected error message
         if(indexA>indexB)
             printf("%n[INFO] Unable to find target %s", target);
+
     }
 
     /*
