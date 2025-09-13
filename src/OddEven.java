@@ -7,6 +7,11 @@
  * This determines the odd and even numbers of an array
  */
 public class OddEven {
+    /** A roundabout way of making an array for a test case */
+    private int[] getNumbers(){
+        return new int[]{240,589,865,2031,9210,120391,782,89,230};
+    }
+
     /** Serves as the entry point of the program */
     public static void main(String[] args) {
         try{
@@ -20,12 +25,8 @@ public class OddEven {
      * Runs the actual program. In this case, since it's just algorithm practice,
      * no program loops are involved
      */
-    private void run(){
+    private void run() {
         displayOddAndEvenNums(getNumbers());
-    }
-    /** A roundabout way of making an array for a test case */
-    private int[] getNumbers(){
-        return new int[]{240,589,865,2031,9210,120391,782,89,230};
     }
 
     /**
@@ -42,14 +43,12 @@ public class OddEven {
         // Stores the count of odd/even numbers
         int oddCounter = 0, evenCounter = 0;
 
-        for(int i = 0; i < arr.length; i++){
-            if(arr[i] % 2 == 0)
-                //If even number, then add to corresponding array with counter post-increment
+        // Checks if the first bit is not toggled, if so then even, otherwise odd
+        for(int i = 0; i < arr.length; i++)
+            if ((arr[i] & 1) == 0)
                 evenArr[evenCounter++] = arr[i];
             else
-                //If not even number (odd number), then add to corresponding array with counter post-increment
                 oddArr[oddCounter++] = arr[i];
-        }
 
         //Displays count of odd numbers
         printf("%nOdd number count: %s", oddCounter);

@@ -21,8 +21,11 @@ public class Multiples {
      * no program loops are involved
      */
     private void run(){
-        for(int val: new int[]{2,3,4,5,6,1})
-            displayMultiples(getNumbers(), val);
+        for(int val: new int[]{2,3,4,5,6,1, -226}){
+            printf("%n[SYSTEM] Displaying multiples with counter for %d", val);
+            displayMultiplesAndCounter(getNumbers(), val);
+        }
+
     }
     /** A roundabout way of making an array for a test case */
     private int[] getNumbers(){
@@ -34,23 +37,38 @@ public class Multiples {
      * @param arr the arr to be searched of multiples
      * @param target the basis of multiples
      */
-    private void displayMultiples(int[] arr, int target) {
-        int[] multiples = new int[arr.length];
-        int multipleCounter = 0;
-        for(int val: arr)
-            if(val % target == 0)
-                multiples[multipleCounter++] = val;
+    private void displayMultiplesAndCounter(int[] arr, int target) {
+        if(target == 0){
+            printf("%n[ERROR] Arithmetic Exception, cannot perform modulus with 0");
+            return;
+        }else if(target<0){
+            printf("%n[ERROR] Target value must not be negative");
+            return;
+        }
 
-        //Displays all multiples
-        printf("%nMultiples of %s: ", target);
-        for(int i = 0; i < multipleCounter; i++)
-            printf("%d%s", multiples[i], (i < multipleCounter - 1) ? ", " : "");
+        // Serves as a counter for multiples
+        int multipleCounter=0;
+
+        // Displays multiples of target
+        printf("%n[INFO] Multiples of %d: ", target);
+        for(int val: arr)
+            if(isMultiple(val, target)){
+                printf("%d ", val);
+                multipleCounter++;
+            }
 
         //Displays count of multiples
-        printf("%nMultiple count: %s", multipleCounter);
+        if (multipleCounter==0)
+            printf("none");
+        else
+            printf("%n[INFO] Multiple count: %d", multipleCounter);
 
         //Prints a space in preparation of next console printout
         printf("%n");
+    }
+
+    private boolean isMultiple(int num, int target){
+        return num % target == 0;
     }
 
 

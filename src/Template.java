@@ -1,12 +1,12 @@
 /* =======================================================
- *          DETERMINE PALINDROME NUMBERS PROGRAM
+ *          XXX NAME PROGRAM
  * ====================================================== */
 /**
  * DISCLAIMER: This program does not reflect the best practices in coding
  *<p></p>
- * This determines the odd and even numbers of an array
+ * Description of the program
  */
-public class Palindrome {
+public class Template {
     /**
      * A roundabout way of making an array for a test case.
      * Could be modified to create arrays with random numbers
@@ -18,7 +18,7 @@ public class Palindrome {
     /** Serves as the entry point of the program */
     public static void main(String[] args) {
         try{
-            new Palindrome().run();
+            new Template().run();
         }catch(Exception e){
             e.printStackTrace();
         }
@@ -29,38 +29,7 @@ public class Palindrome {
      * no program loops are involved
      */
     private void run(){
-        for(int num: getNumbers()){
-            showMessage(ConsoleTag.SYSTEM, "Determining %d if palindrome", num);
-            if(isPalindrome(num))
-                showMessage(ConsoleTag.INFO, "Palindrome found: %d", num);
-            else
-                showMessage(ConsoleTag.INFO, "Attempted value is not a palindrome: %d", num);
-            println();
-        }
     }
-
-    /**
-     * Determines if a number is a palindrome
-     * @param num the number to be checked
-     * @return if num is a palindrome, true. Otherwise, false
-     */
-    private boolean isPalindrome(int num){
-        // Filters out negative integers
-        // and 0 on the ones place, which is not a palindrome
-        if(num<0 || (num%10==0 && num !=0)) return false;
-
-        // Gets two halves of num by reducing num and adding to reversed
-        // e.g. 12321, after loop, num = 12, reversed = 123
-        // e.g. 1221, after loop, num = 12, reversed = 12
-        int reversed = 0;
-        while(reversed<num){
-            reversed = reversed*10 + num%10;
-            num /= 10;
-        }
-        showMessage(ConsoleTag.DEBUG, "Current num value: %d | Current reversed value: %d", num, reversed);
-        return num == reversed || num == reversed /10;
-    }
-
     /*======================================================
      *          UTILITIES
      *======================================================*/
